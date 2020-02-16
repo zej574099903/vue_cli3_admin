@@ -58,12 +58,6 @@ module.exports = {
     }
   },
   devServer: {
-    //环境配置
-    host: "localhost",
-    port: 8080,
-    https: false, //是否开启https
-    hotOnly: false, //是否配置热更新
-    open: false, //配置自动启动浏览器
     proxy: {
       //配置多个代理跨域(配置一个 proxy: 'http://localhost:4000' )
       "/api": {
