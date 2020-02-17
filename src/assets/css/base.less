@@ -1,71 +1,103 @@
 /* 开始：登陆页面 */
 .login_bg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("../img/login/bg.jpg") no-repeat fixed center;
-    background-size: cover;
-    .login_box {
-      position: relative;
-      margin: 10% auto;
-      width: 700px;
-      height: 300px;
-      border-radius: 10px;
-      background: rgba(190, 190, 190, 0.4);
-      overflow: hidden;
-      .logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-      }
-      .content {
-        display: flex;
-        color: #fff;
-        .left {
-          margin-top: 12%;
-          padding-top: 50px;
-          width: 68%;
-          height: 150px;
-          border-right: 1px solid #ccc;
-          border-color: rgba(255, 255, 255, 0.6);
-          text-align: center;
-          .title {
-            font-size: 28px;
-            font-family: Regular;
-          }
-          .edition {
-            font-size: 12px;
-            font-family: Regular;
-            margin-left: 5px;
-          }
-          .english {
-            font-size: 13px;
-            font-family: Arista2;
-          }
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("../img/login/bg.jpg") no-repeat fixed center;
+  background-size: cover;
+  .login_box {
+    position: relative;
+    margin: 10% auto;
+    width: 700px;
+    height: 300px;
+    border-radius: 10px;
+    background: rgba(190, 190, 190, 0.4);
+    overflow: hidden;
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .content {
+      display: flex;
+      color: #fff;
+      .left {
+        margin-top: 12%;
+        padding-top: 50px;
+        width: 68%;
+        height: 150px;
+        border-right: 1px solid #ccc;
+        border-color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+        .title {
+          font-size: 28px;
+          font-family: Regular;
         }
-        .right {
-          margin-top: 50px;
-          padding: 0 20px;
-          flex: 1;
-          .login_title {
-            font-size: 20px;
-            font-family: Regular;
-            font-weight: normal;
+        .edition {
+          font-size: 12px;
+          font-family: Regular;
+          margin-left: 5px;
+        }
+        .english {
+          font-size: 13px;
+          font-family: Arista2;
+        }
+      }
+      .right {
+        margin-top: 50px;
+        padding: 0 20px;
+        flex: 1;
+        .login_title {
+          font-size: 20px;
+          font-family: Regular;
+          font-weight: normal;
+        }
+        .login_form {
+          max-width: 300px;
+          .icon_color {
+            color: #fff;
           }
-          .login_form {
-            max-width: 300px;
-            .icon_color {
-              color: #fff;
-            }
-            .login_form_button {
-              width: 100%;
-              border-radius: 20px;
-            }
+          .login_form_button {
+            width: 100%;
+            border-radius: 20px;
           }
         }
       }
     }
   }
+}
 /* 结束：登陆页面 */
+/* 开始：layout页面 */
+.layout {
+  width: 100%;
+  height: 100%;
+  .logo {
+    height: 32px;
+    margin: 16px;
+    text-align: center;
+    color: #fff;
+  }
+  .content {
+    position: relative;
+    margin: 20px 10px 10px 10px;
+    padding: 12px 3px 12px 12px;
+    background: #fff;
+    height: calc(100% - 46px);
+    overflow: auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px #ccc;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;;
+    background: #fff;
+    padding: 0;
+    .right{
+      margin-right: 20px;
+    }
+  }
+}
+
+/* 结束：layout页面 */

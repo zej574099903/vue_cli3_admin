@@ -55,7 +55,6 @@
                 :loading="loading"
                 >登录</a-button
               >
-              <a-button @click="changeTheme('#FA541C')">切换主题</a-button>
             </a-form-item>
           </a-form>
         </div>
@@ -73,20 +72,18 @@ export default {
   name: "Login",
   data() {
     return {
-      loading:false
+      loading: false
     };
   },
   beforeCreate() {
     this.form = this.$form.createForm(this);
   },
   methods: {
-    login(){
-      this.loading=true
-    },
-    changeTheme(primaryColor) {
-      window.less.modifyVars({
-        "@primary-color": primaryColor
-      });
+    login() {
+      this.loading = true;
+      sessionStorage.setItem("token", "success");
+      this.loading = false;
+      this.$router.push("/");
     }
   }
 };

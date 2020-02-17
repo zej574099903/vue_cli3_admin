@@ -6,7 +6,11 @@ import store from './store'
 import Antd from '../node_modules/ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
  
-Vue.use(Antd)
+Vue.use(Antd);
+
+// 引入颜色选择器插件
+import vcolorpicker from 'vcolorpicker'
+Vue.use(vcolorpicker)
 
 // 引入common.css
 import './assets/css/common.css';
