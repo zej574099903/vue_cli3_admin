@@ -1,0 +1,20 @@
+/**
+ * @description ant design 样式的修改
+ * @author zhouenjun
+ * @date 2020/02/14
+ */
+
+@layout_sider_bg: #001529; //layout左侧菜单栏背景色
+@layout_header_bg: #fff; //layout头部背景色
+
+.ant-layout-sider,
+.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub {
+  background: @layout_sider_bg !important;
+}
+
+.layout {
+  .header {
+    background: @layout_header_bg !important;
+  }
+}

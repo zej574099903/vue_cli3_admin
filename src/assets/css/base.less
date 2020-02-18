@@ -1,12 +1,20 @@
+/**
+* @desc 公共模块的样式
+* @author zhouenjun
+* @date 2020/02/14
+*/
 /* 开始：登陆页面 */
+@login_bg: url("../img/login/bg.jpg") no-repeat fixed center; //登陆背景图
+
 .login_bg {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: url("../img/login/bg.jpg") no-repeat fixed center;
+  background: @login_bg;
   background-size: cover;
+  text-align: center;
   .login_box {
     position: relative;
     margin: 10% auto;
@@ -73,6 +81,16 @@
 .layout {
   width: 100%;
   height: 100%;
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .trigger:hover {
+    color: #1890ff;
+  }
   .logo {
     height: 32px;
     margin: 16px;
@@ -91,13 +109,33 @@
   }
   .header {
     display: flex;
-    justify-content: space-between;;
+    justify-content: space-between;
     background: #fff;
     padding: 0;
-    .right{
+    .right {
       margin-right: 20px;
     }
   }
 }
 
 /* 结束：layout页面 */
+/* 开始：更换主题页面 */
+.theme {
+  h2 {
+    margin: 30px 0;
+  }
+  .ant-btn {
+    width: 60px;
+    border: none !important;
+    margin: 5px 20px;
+  }
+  .input{
+    .ant-input,.ant-input-affix-wrapper{
+      width: 180px;
+    }
+  }
+  img{
+    width: 100%;
+  }
+}
+/* 结束：更换主题页面 */

@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="theme">
     <h2>请选择你要的主题色</h2>
     <div>
       <a-button
@@ -54,7 +54,8 @@
       <a-input placeholder="请输入色号如 #ffffff" v-model="colorNum" allowClear></a-input>
       <a-button type="primary" @click="changeTheme(colorNum)">生成</a-button>
     </div>
-    
+    <h2>变更示例</h2>
+    <img src="../../../assets/img/tips/theme.png" alt="">
     <!-- 颜色选择器插件 -->
     <!-- <colorPicker v-model="color" @change="checkColor" defaultColor="#1890ff"></colorPicker> -->
     <!-- 颜色选择器插件 -->
@@ -62,7 +63,7 @@
 </template>
 <script>
 /**
- * @description 更换主题
+ * @description 更换主题页面
  */
 export default {
   name: "Theme",
@@ -81,20 +82,3 @@ export default {
   }
 };
 </script>
-<style lang="less">
-.box {
-  h2 {
-    margin: 30px 0;
-  }
-  .ant-btn {
-    width: 60px;
-    border: none !important;
-    margin: 5px 20px;
-  }
-  .input{
-    .ant-input,.ant-input-affix-wrapper{
-      width: 180px;
-    }
-  }
-}
-</style>

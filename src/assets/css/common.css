@@ -1,7 +1,7 @@
 /**
 * @desc 统一基础样式
-* @author dunfee
-* @date 2019/10/08
+* @author zhouenjun
+* @date 2020/02/14
 */
 html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select { box-sizing: border-box; margin: 0; padding: 0; }
 section, header, main, footer, aside { box-sizing: border-box; margin: 0; padding: 0; }

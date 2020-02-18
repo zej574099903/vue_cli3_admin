@@ -38,6 +38,9 @@
   </a-layout>
 </template>
 <script>
+/**
+ * @description layout布局
+ */
 export default {
   name: "Layout",
   components: {
@@ -52,7 +55,7 @@ export default {
     };
   },
   computed: {
-    // 默认的选择框
+    // 默认的菜单选择框
     defaultSelected() {
       if (this.$route.name != null) {
         return [this.$route.name];
@@ -91,15 +94,4 @@ export default {
 };
 </script>
 <style>
-.layout .trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.layout .trigger:hover {
-  color: #1890ff;
-}
 </style>

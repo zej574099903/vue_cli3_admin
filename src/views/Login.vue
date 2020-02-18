@@ -79,6 +79,7 @@ export default {
     this.form = this.$form.createForm(this);
   },
   methods: {
+    // 点击登陆
     login(e) {
       e.preventDefault();
       this.form.validateFields((err, values) => {

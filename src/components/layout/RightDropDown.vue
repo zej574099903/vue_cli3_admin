@@ -14,7 +14,7 @@
 </template>
 <script>
 /**
- * @description 系统主页
+ * @description layout右上的角内容
  */
 export default {
   name: "RightDropDown",
@@ -24,6 +24,7 @@ export default {
     };
   },
   methods: {
+    // 退出登陆
     logout() {
       sessionStorage.clear();
       this.$router.push("/login");
