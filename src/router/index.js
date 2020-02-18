@@ -1,6 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import NProgress from 'nprogress' // 页面跳转时顶部进度条
+import '@/components/NProgress/nprogress.less' // 页面进度条的样式
+import { setDocumentTitle, domTitle } from '@/utils/domUtil'//设置标签栏头部信息
+
+NProgress.configure({ showSpinner: false }) // NProgress Configuration
+
+
 // 系统登录页
 const Login = () => import("@/views/Login");
 // 系统主页
@@ -43,9 +50,12 @@ const router = new VueRouter({
 // 全局前置守卫，用于权限拦截
 router.beforeEach((to, from, next) => {
   let accessPathName = ["login"]; // 不需要登陆就可以直接访问
+  NProgress.start() // start progress bar
+  to.meta && (typeof to.meta.title !== 'undefined' && setDocumentTitle(`${to.meta.title} - ${domTitle}`))//设置头部标签栏信息
   if (sessionStorage.getItem("token")) {
     // 如果已登陆，即可放行
     next();
+    NProgress.done()
   } else if (accessPathName.indexOf(to.name) > -1) {
     /**
      * 此时是没有登陆的情况，
@@ -60,5 +70,9 @@ router.beforeEach((to, from, next) => {
     next("/login");
   }
 });
+
+router.afterEach(() => {
+  NProgress.done() // finish progress bar
+})
 
 export default router;
