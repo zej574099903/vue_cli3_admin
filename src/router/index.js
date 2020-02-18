@@ -51,7 +51,6 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   let accessPathName = ["login"]; // 不需要登陆就可以直接访问
   NProgress.start() // start progress bar
-  to.meta && (typeof to.meta.title !== 'undefined' && setDocumentTitle(`${to.meta.title} - ${domTitle}`))//设置头部标签栏信息
   if (sessionStorage.getItem("token")) {
     // 如果已登陆，即可放行
     next();
