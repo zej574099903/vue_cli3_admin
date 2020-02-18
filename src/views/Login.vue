@@ -79,11 +79,20 @@ export default {
     this.form = this.$form.createForm(this);
   },
   methods: {
-    login() {
-      this.loading = true;
-      sessionStorage.setItem("token", "success");
-      this.loading = false;
-      this.$router.push("/");
+    login(e) {
+      e.preventDefault();
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          this.loading = true;
+          let userLogin = values.userName;
+          let userPassword = values.passWord;
+          if (userLogin && userPassword) {
+            this.loading=false
+            sessionStorage.setItem("token", "success");
+            this.$router.push("/");
+          }
+        }
+      });
     }
   }
 };

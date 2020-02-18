@@ -5,7 +5,7 @@ import VueRouter from "vue-router";
 const Login = () => import("@/views/Login");
 // 系统主页
 const Main = () => import("@/views/main/Main");
-const Home = () => import("@/views/main/home/Home");
+const Theme = () => import("@/views/main/theme/Theme");
 
 Vue.use(VueRouter);
 
@@ -18,12 +18,12 @@ const routes = [
     path: "/main",
     name: "main",
     component: Main,
-    redirect: "/main/home",
+    redirect: "/main/theme",
     children: [
       {
-        path: "home",
-        name: "home",
-        component: Home
+        path: "theme",
+        name: "theme",
+        component: Theme
       }
     ]
   },
