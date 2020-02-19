@@ -2,8 +2,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import NProgress from 'nprogress' // 页面跳转时顶部进度条
-import '@/components/NProgress/nprogress.less' // 页面进度条的样式
-import { setDocumentTitle, domTitle } from '@/utils/domUtil'//设置标签栏头部信息
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -12,6 +10,7 @@ NProgress.configure({ showSpinner: false }) // NProgress Configuration
 const Login = () => import("@/views/Login");
 // 系统主页
 const Main = () => import("@/views/main/Main");
+const Home = () => import("@/views/main/home/Home");
 const Theme = () => import("@/views/main/theme/Theme");
 
 Vue.use(VueRouter);
@@ -25,8 +24,13 @@ const routes = [
     path: "/main",
     name: "main",
     component: Main,
-    redirect: "/main/theme",
+    redirect: "/main/home",
     children: [
+      {
+        path: "home",
+        name: "home",
+        component: Home
+      },
       {
         path: "theme",
         name: "theme",
@@ -42,7 +46,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "hash",
   base: process.env.BASE_URL,
   routes
 });

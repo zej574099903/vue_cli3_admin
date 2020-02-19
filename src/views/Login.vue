@@ -6,7 +6,7 @@
       </div>
       <div class="content">
         <div class="left">
-          <span class="title">无线资源实时管理平台</span>
+          <span class="title">智慧运维管理平台</span>
           <span class="edition">v0.0.1</span>
           <br />
           <span class="english"

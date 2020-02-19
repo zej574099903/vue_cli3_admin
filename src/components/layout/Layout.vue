@@ -12,6 +12,7 @@
         @openChange="onOpenChange"
         :selectedKeys="defaultSelected"
       >
+        <a-menu-item  key="home"><a-icon type="home" />首页</a-menu-item>
         <a-sub-menu key="系统管理">
           <span slot="title"
             ><a-icon type="setting" /><span>系统设置</span></span
@@ -93,5 +94,4 @@ export default {
   }
 };
 </script>
-<style>
-</style>
+<style></style>
