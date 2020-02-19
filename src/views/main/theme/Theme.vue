@@ -78,6 +78,7 @@ export default {
       window.less.modifyVars({
         "@primary-color": primaryColor
       });
+      this.$store.commit("theme/setGlobalTheme", primaryColor);
     }
   }
 };
