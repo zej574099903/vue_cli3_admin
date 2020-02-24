@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-avatar icon="user" size="small" />
-    {{ username }}
+    <span class="userName">{{ username }}</span>
     <a-dropdown :trigger="['click']">
       <a-icon type="poweroff" style="font-size: 16px;vertical-align: sub" />
       <a-menu slot="overlay">
@@ -32,3 +32,8 @@ export default {
   }
 };
 </script>
+<style lang="less">
+.userName{
+  margin:0 10px;
+}
+</style>

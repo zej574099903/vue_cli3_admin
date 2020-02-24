@@ -78,7 +78,7 @@
 }
 /* 结束：登陆页面 */
 /* 开始：layout页面 */
-.layout {
+.layoutLeft {
   width: 100%;
   height: 100%;
   .trigger {
@@ -117,7 +117,37 @@
     }
   }
 }
-
+.layoutTop{
+  width: 100%;
+  height: 100%;
+  .logo{
+    margin:0 36px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+  }
+  .ant-layout-header{
+    padding: 0 !important;
+    position: relative;
+    .right{
+      position: absolute;
+      top: 0;
+      right: 20px;
+      bottom: 0;
+      color: #fff;
+    }
+  }
+  .content {
+    position: relative;
+    margin: 20px 10px 10px 10px;
+    padding: 12px 3px 12px 12px;
+    background: #fff;
+    height: calc(100% - 46px);
+    overflow: auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px #ccc;
+  }
+}
 /* 结束：layout页面 */
 /* 开始：更换主题页面 */
 .theme {
@@ -139,3 +169,14 @@
   }
 }
 /* 结束：更换主题页面 */
+
+/* 开始：更换布局页面 */
+.changeLayout{
+  h2 {
+    margin: 30px 0;
+  }
+  .ant-btn {
+    margin: 5px 20px;
+  }
+}
+/* 结束：更换布局页面 */
