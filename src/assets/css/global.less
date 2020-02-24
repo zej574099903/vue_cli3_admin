@@ -2,5 +2,112 @@
  * @description 全局样式
  * @author zej
  * @date 2020/02/17
- * smart：即智慧运营（智慧运营项目前缀）
+ * ict：即智慧运营（智慧运营项目前缀）
  */
+/**
+* @desc global.css（全局样式）
+* @author dunfee
+* @date 2020/2/20
+*/
+.is-btn {
+    cursor: pointer;
+}
+/* 垂直（flex） */
+.is-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* 对齐 */
+.ict-align--left,
+.ict-align--right,
+.ict-align--top,
+.ict-align--bottom {
+    display: flex;
+}
+/* 左侧对齐 */
+.ict-align--left.is-vertical {
+    align-items: flex-start;
+}
+.ict-align--left:not(.is-vertical) {
+    justify-content: flex-start;
+}
+/* 右侧对齐 */
+.ict-align--right.is-vertical {
+    align-items: flex-end;
+}
+.ict-align--right:not(.is-vertical) {
+    justify-content: flex-end;
+}
+/* 顶部对齐 */
+.ict-align--top.is-vertical {
+    justify-content: flex-start;
+}
+.ict-align--top:not(.is-vertical) {
+    align-items: flex-start;
+}
+/* 底部对齐 */
+.ict-align--bottom.is-vertical {
+    justify-content: flex-end;
+}
+.ict-align--bottom:not(.is-vertical) {
+    align-items: flex-end;
+}
+
+
+/* 居中 */
+.ict-align-center,
+.ict-align-center--horizontal,
+.ict-align-center--vertical {
+    display: flex;
+}
+/* 水平垂直居中（flex） */
+.ict-align-center {
+    justify-content: center;
+    align-items: center;
+}
+/* 水平居中（flex） */
+.ict-align-center--horizontal.is-vertical {
+    align-items: center;
+}
+.ict-align-center--horizontal:not(.is-vertical) {
+    justify-content: center;
+}
+/* 垂直居中（flex） */
+.ict-align-center--vertical.is-vertical {
+    justify-content: center;
+}
+.ict-align-center--vertical:not(.is-vertical) {
+    align-items: center;
+}
+
+
+/* 自定义布局容器ict */
+.ict-container,
+.ict-container .ict-aside {
+    display: flex;
+}
+.ict-container,
+.ict-container .ict-aside,
+.ict-container .ict-header,
+.ict-container .ict-footer {
+    flex-shrink: 0;
+}
+.ict-container {
+    width: 100%;
+    height: 100%;
+}
+.ict-container .ict-aside {
+    height: 100%;
+}
+.ict-container .ict-header {
+    height: 5.56vh;
+    line-height: 5.56vh;
+}
+.ict-container .ict-main {
+    display: block;
+}
+.ict-container .ict-footer {
+    height: 5.2vh;
+}

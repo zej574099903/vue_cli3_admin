@@ -1,6 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+// 跳转相同路由，浏览器控制台报错处理
+["push", "replace"].forEach(methodName => {
+  const method = Router.prototype[`${methodName}`];
+  Router.prototype[`${methodName}`] = function(location) {
+      return method.call(this, location).catch(error => error);
+  };
+});
+
 import NProgress from 'nprogress' // 页面跳转时顶部进度条
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration

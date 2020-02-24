@@ -4,21 +4,19 @@ import router from './router'
 import store from './store'
 
 import Antd from '../node_modules/ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
  
 Vue.use(Antd);
 
-// 引入颜色选择器插件
-// import vcolorpicker from 'vcolorpicker'
-// Vue.use(vcolorpicker)
 
-// 引入common.css
+// 引入ant样式
+import 'ant-design-vue/dist/antd.css'
+// 引入common.css（初始格式化样式）
 import './assets/css/common.css';
-// global.css
+// global.css（全局样式）
 import './assets/css/global.less';
-// 引入base.css
+// 引入base.css（页面样式，或多处使用的局部样式）
 import './assets/css/base.less';
-// 引入layout.css（响应式布局）
+// 引入layout.css
 import './assets/css/layout.less';
 
 Vue.config.productionTip = false

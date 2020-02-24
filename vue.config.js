@@ -1,11 +1,10 @@
 const AntDesignThemePlugin = require("antd-theme-webpack-plugin");
 const path = require("path");
 
-
 // 设置别名方法
-function resolve (dir) {
-  console.log(__dirname)
-  return path.join(__dirname, dir)
+function resolve(dir) {
+  console.log(__dirname);
+  return path.join(__dirname, dir);
 }
 
 const options = {
@@ -24,35 +23,21 @@ module.exports = {
     plugins: [new AntDesignThemePlugin(options)]
   },
 
-  publicPath: "/", //部署应用时的根路径(默认'/'),也可用相对路径(存在使用限制)
-  outputDir: "dist", //运行时生成的生产环境构建文件的目录(默认'dist'，构建之前会被清除)
-  assetsDir: "", //静态资源目录(js、css、img、fonts)，相对outputDir的目录(默认'')
-  indexPath: "index.html", //指定生成index.html的输出路径(相对outputDir)也可以是绝对路径
-  lintOnSave: true, //是否开启ESlint（保存时检查）
-  productionSourceMap: true, //生产环境是否生成 sourceMap 文件
-  pages: {
-    //pages里配置的路径和文件名在你的文档目录必须存在，否则启动服务会报错
-    index: {
-      //除了 entry 之外都是可选的
-      entry: "src/main.js", //page的主入口
-      template: "public/index.html", //模板来源
-      filename: "index.html", //在 dist/index.html 的输出
-      //title在template中使用：<title><%=htmlWebpackPlugin.options.title%></title>
-      title: "生成的配置信息",
-      chunks: ["chunk-vendors", "chunk-common", "index"]
-      // 在这个页面中包含的块，默认情况下会包含,提取出来的通用 chunk 和 vendor chunk
-    },
-    subpage: "src/main.js"
-    //官方解释：当使用只有入口的字符串格式时，模板会被推导为public.html
-  },
+  publicPath: "./", //部署应用时的根路径(默认'/'),也可用相对路径(存在使用限制)
+  // outputDir: "dist", // 当运行 vue-cli-service build 时生成的生产环境构建文件的目录。默认值为dist。
+  // assetsDir: "", // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。默认值为''。
+  // indexPath: "index.html", // 指定生成的 index.html 的输出路径 (相对于 outputDir)。默认值为'index.html'。也可以是一个绝对路径。
+  // filenameHashing: true, // 默认值为true。
+  // pages: undefined, // 在 multi-page 模式下构建应用。每个“page”应该有一个对应的 JavaScript 入口文件。默认值为undefined。
+  // lintOnSave: false, // 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码。这个值会在 @vue/cli-plugin-eslint 被安装之后生效。默认值为true。
+  // runtimeCompiler: false, // 是否使用包含运行时编译器的 Vue 构建版本。默认值为false。
+  // transpileDependencies: [], // 默认情况下 babel-loader 会忽略所有 node_modules 中的文件。如果你想要通过 Babel 显式转译一个依赖，可以在这个选项中列出来。默认值为[]。
+  // productionSourceMap: true, // 默认值为true，但为true会影响打包速度和包的大小。
+  // crossorigin: undefined, // 设置生成的 HTML 中 <link rel="stylesheet"> 和 <script> 标签的 crossorigin 属性。默认值为undefined。
   css: {
     loaderOptions: {
       less: {
-        modifyVars: {
-          // "primary-color": "#F5222D",
-          // "link-color": "#F5222D",
-          // "border-radius-base": "2px"
-        },
+        modifyVars: {},
         javascriptEnabled: true
       }
     }
@@ -68,12 +53,7 @@ module.exports = {
       }
     }
   },
-  pluginOptions: {
-    // 第三方插件配置
-    // ...
-  },
   chainWebpack: config => {
-    config.resolve.alias
-      .set("@", resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
+    config.resolve.alias.set("@", resolve("src")); // key,value自行定义，比如.set('@@', resolve('src/components'))
   }
 };

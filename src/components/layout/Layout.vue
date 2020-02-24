@@ -51,8 +51,8 @@ export default {
     return {
       collapsed: false,
       logoTitle: "智慧组模板",
-      rootSubmenuKeys: ["系统管理"],
-      openKeys: ["系统管理"]
+      rootSubmenuKeys: ["首页","系统管理"],
+      openKeys: ["首页"]
     };
   },
   computed: {

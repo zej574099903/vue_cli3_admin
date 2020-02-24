@@ -1,5 +1,6 @@
 
 const state = {
+  // 默认全局主题
   globalTheme:'#1890ff'
 };
 
@@ -14,8 +15,6 @@ const mutations = {
   // 设置全局样式
   setGlobalTheme(state, data) {
     state.globalTheme = data;
-    // // 将主题色号存入本地便于下次登陆获取
-    // localStorage.setItem('theme',data);
   }
 };
 
