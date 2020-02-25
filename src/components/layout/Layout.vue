@@ -13,14 +13,9 @@
           @openChange="onOpenChange"
           :selectedKeys="defaultSelected"
         >
-          <a-menu-item key="home"><a-icon type="home" /><span>首页</span></a-menu-item>
-          <a-sub-menu key="系统管理">
-            <span slot="title"
-              ><a-icon type="setting" /><span>系统设置</span></span
-            >
-            <a-menu-item key="theme">更换主题</a-menu-item>
-            <a-menu-item key="changeLayout">更换布局</a-menu-item>
-          </a-sub-menu>
+          <a-menu-item key="home"
+            ><a-icon type="home" /><span>首页</span></a-menu-item
+          >
         </a-menu>
       </a-layout-sider>
       <a-layout>
@@ -54,23 +49,22 @@
           :selectedKeys="defaultSelected"
           :style="{ lineHeight: '64px' }"
         >
-          <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
-          <a-sub-menu key="系统管理">
-            <span slot="title"
-              ><a-icon type="setting" /><span>系统设置</span></span
-            >
-            <a-menu-item key="theme">更换主题</a-menu-item>
-            <a-menu-item key="changeLayout">更换布局</a-menu-item>
-          </a-sub-menu>
+          <a-menu-item key="home"
+            ><a-icon type="home" /><span>首页</span></a-menu-item
+          >
         </a-menu>
         <div class="right">
           <right-drop-down></right-drop-down>
         </div>
       </a-layout-header>
-      <a-layout-content :style="{ padding: '0 50px', marginTop: '74px' }" class="content">
+      <a-layout-content
+        :style="{ padding: '0 50px', marginTop: '74px' }"
+        class="content"
+      >
         <router-view />
       </a-layout-content>
     </a-layout>
+    <drawer></drawer>
   </div>
 </template>
 <script>
@@ -82,14 +76,15 @@ import { mapState } from "vuex";
 export default {
   name: "Layout",
   components: {
-    "right-drop-down": () => import("@/components/layout/RightDropDown") // header右侧下拉框
+    "right-drop-down": () => import("@/components/layout/RightDropDown"), // header右侧下拉框
+    "drawer": () => import("@/components/layout/Drawer") //系统设置抽屉按钮
   },
   data() {
     return {
       collapsed: false,
       logoTitle: "智慧组模板",
-      rootSubmenuKeys: ["首页", "系统设置"],
-      openKeys: ["首页"]
+      rootSubmenuKeys: ["首页"],
+      openKeys: []
     };
   },
   computed: {
@@ -121,16 +116,30 @@ export default {
         this.$router.push({ name: key });
       }
     },
-    //菜单栏展开时间
+    //菜单栏展开事件
     onOpenChange(openKeys) {
       const latestOpenKey = openKeys.find(
         key => this.openKeys.indexOf(key) === -1
       );
+      console.log(latestOpenKey);
       if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
         this.openKeys = openKeys;
       } else {
         this.openKeys = latestOpenKey ? [latestOpenKey] : [];
       }
+    }
+  },
+  watch: {
+    "$route.name": {
+      handler(newName, oldName) {
+        switch (newName) {
+          case "home":
+            this.openKeys = ["首页"];
+            break;
+        }
+      },
+      deep: true,
+      immediate: true
     }
   }
 };

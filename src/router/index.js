@@ -20,8 +20,6 @@ const Login = () => import("@/views/Login");
 // 系统主页
 const Main = () => import("@/views/main/Main");
 const Home = () => import("@/views/main/home/Home");
-const Theme = () => import("@/views/main/theme/Theme");
-const ChangeLayout = () => import("@/views/main/changeLayout/ChangeLayout");
 
 Vue.use(VueRouter);
 
@@ -33,21 +31,11 @@ const routes = [{
         path: "/main",
         name: "main",
         component: Main,
-        redirect: "/main/theme",
+        redirect: "/main/home",
         children: [{
                 path: "home",
                 name: "home",
                 component: Home
-            },
-            {
-                path: "theme",
-                name: "theme",
-                component: Theme
-            },
-            {
-                path: "changeLayout",
-                name: "changeLayout",
-                component: ChangeLayout
             }
         ]
     },
