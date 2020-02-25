@@ -5,7 +5,7 @@
       class="ict-align-center set_btn"
       @click="showDrawer"
       :style="{ right: visible ? '257px' : '0' }"
-      ><a-icon :type="visible ? 'close' : 'setting'"
+      ><a-icon :type="visible ? 'close' : 'setting'" style="line-height:0"
     /></a-button>
     <a-drawer
       title="用户偏好设置"
@@ -60,25 +60,42 @@
         </div>
         <h4>输入色号进行更换</h4>
         <div class="ict-align--left input_box">
-          <a-input class="input" placeholder="示例:#e3e3e3" v-model="colorNum" allowClear></a-input>
-          <a-button type="primary" @click="changeTheme(colorNum)">确认</a-button>
+          <a-input
+            class="input"
+            placeholder="示例:#e3e3e3"
+            v-model="colorNum"
+            allowClear
+          ></a-input>
+          <a-button type="primary" @click="changeTheme(colorNum)"
+            >确认</a-button
+          >
         </div>
         <h4>导航栏切换</h4>
         <div class="ict-align--left nav_box">
-          <div class="left" @click="changeLayout('left')">
-            <img
-              src="https://gw.alipayobjects.com/zos/rmsportal/JopDzEhOqwOjeNTXkoje.svg"
-              alt=""
-            />
-            <a-icon class="icon" type="check" v-if="layoutType==='left'"/>
-          </div>
-          <div class="top" @click="changeLayout('top')">
-            <img
-              src="https://gw.alipayobjects.com/zos/rmsportal/KDNDBbriJhLwuqMoxcAr.svg"
-              alt=""
-            />
-            <a-icon class="icon" type="check" v-if="layoutType==='top'"/>
-          </div>
+          <a-tooltip placement="top">
+            <template slot="title">
+              <span>导航栏左侧</span>
+            </template>
+            <div class="left" @click="changeLayout('left')">
+              <img
+                src="https://gw.alipayobjects.com/zos/rmsportal/JopDzEhOqwOjeNTXkoje.svg"
+                alt=""
+              />
+              <a-icon class="icon" type="check" v-if="layoutType === 'left'" />
+            </div>
+          </a-tooltip>
+          <a-tooltip placement="top">
+            <template slot="title">
+              <span>导航栏顶部</span>
+            </template>
+            <div class="top" @click="changeLayout('top')">
+              <img
+                src="https://gw.alipayobjects.com/zos/rmsportal/KDNDBbriJhLwuqMoxcAr.svg"
+                alt=""
+              />
+              <a-icon class="icon" type="check" v-if="layoutType === 'top'" />
+            </div>
+          </a-tooltip>
         </div>
       </div>
     </a-drawer>
@@ -92,13 +109,13 @@ export default {
   data() {
     return {
       visible: false,
-      colorNum:""
+      colorNum: ""
     };
   },
   methods: {
     //展现抽屉盒
     showDrawer() {
-      this.visible = true;
+      this.visible=!this.visible
     },
     // 隐藏抽屉盒
     onClose() {
@@ -112,13 +129,12 @@ export default {
       this.$store.commit("theme/setGlobalTheme", primaryColor);
     },
     // 改变布局方式
-    changeLayout(type){
+    changeLayout(type) {
       this.$store.commit("changeLayout/setdefaultType", type);
     }
-
   },
-  computed:{
-      ...mapState({
+  computed: {
+    ...mapState({
       //这里的...是超引用，ES6的语法，意思是state里有多少属性值我可以在这里放多少属性值
       layoutType: state => state.changeLayout.defaultType
     })
@@ -135,14 +151,12 @@ export default {
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
   font-size: 22px;
   color: #fff;
-  z-index: 999;
+  z-index: 999999;
 }
 .container {
   .theme_btns {
     margin-top: 10px;
     overflow-x: hidden;
-    height: 40px;
-    border-bottom: 1px solid #e8e8e8;
     justify-content: space-between;
     .ant-btn {
       padding: 0;
@@ -152,11 +166,16 @@ export default {
     }
   }
   .input_box {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e8e8e8;
     .input {
       margin-right: 5px;
+      height: 32px;
     }
   }
   .nav_box {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e8e8e8;
     .left,
     .top {
       position: relative;

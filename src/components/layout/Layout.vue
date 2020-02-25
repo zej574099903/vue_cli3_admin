@@ -1,6 +1,6 @@
 <template>
   <div style="height:100%">
-    <a-layout class="layoutLeft" v-if="layoutType === 'left'">
+    <a-layout class="layout_left" v-if="layoutType === 'left'">
       <a-layout-sider :trigger="null" collapsible v-model="collapsed">
         <div class="logo">
           {{ logoTitle }}
@@ -34,7 +34,7 @@
         </a-layout-content>
       </a-layout>
     </a-layout>
-    <a-layout class="layoutTop" v-if="layoutType === 'top'">
+    <a-layout class="layout_top" v-if="layoutType === 'top'">
       <a-layout-header
         :style="{ position: 'fixed', zIndex: 1, width: '100%' }"
         class="ict-align--left"
