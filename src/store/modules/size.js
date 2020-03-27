@@ -4,7 +4,7 @@ const state = {
     dmsSize:'default',//size(default,middle,small)可用于table,
 };
 
-const getters = {
+const getters = { 
     // 获取ldsSize
     renderLdsSize(state) {
         return state.ldsSize;
