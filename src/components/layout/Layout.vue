@@ -14,7 +14,10 @@
           :selectedKeys="defaultSelected"
         >
           <a-menu-item key="home"
-            ><a-icon type="home" /><span>selfAdaption</span></a-menu-item
+            ><a-icon type="home" /><span>首页</span></a-menu-item
+          >
+          <a-menu-item key="selfAdaption"
+            ><a-icon type="arrows-alt" /><span>自适应</span></a-menu-item
           >
         </a-menu>
       </a-layout-sider>
@@ -50,7 +53,10 @@
           :style="{ lineHeight: '64px' }"
         >
           <a-menu-item key="home"
-            ><a-icon type="home" /><span>selfAdaption</span></a-menu-item
+            ><a-icon type="home" /><span>首页</span></a-menu-item
+          >
+          <a-menu-item key="selfAdaption"
+            ><a-icon type="arrows-alt" /><span>自适应</span></a-menu-item
           >
         </a-menu>
         <div class="right">
@@ -77,7 +83,7 @@ export default {
   name: "Layout",
   components: {
     "right-drop-down": () => import("@/components/layout/RightDropDown"), // header右侧下拉框
-    "drawer": () => import("@/components/layout/Drawer") //系统设置抽屉按钮
+    drawer: () => import("@/components/layout/Drawer") //系统设置抽屉按钮
   },
   data() {
     return {

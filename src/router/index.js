@@ -20,6 +20,7 @@ const Login = () => import("@/views/Login");
 // 系统主页
 const Main = () => import("@/views/main/Main");
 const Home = () => import("@/views/main/home/Home");
+const SelfAdaption = () => import("@/views/main/selfAdaption/SelfAdaption")
 
 Vue.use(VueRouter);
 
@@ -33,11 +34,14 @@ const routes = [{
         component: Main,
         redirect: "/main/home",
         children: [{
-                path: "home",
-                name: "home",
-                component: Home
-            }
-        ]
+            path: "home",
+            name: "home",
+            component: Home
+        }, {
+            path: "selfAdaption",
+            name: "selfAdaption",
+            component: SelfAdaption
+        }]
     },
     {
         path: "/login",
