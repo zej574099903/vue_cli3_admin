@@ -1,13 +1,13 @@
 const state = {
-    baseSize: 'default', // 默认通用size,可用于button、input、datePicker、select、avatar
+    ldsSize: 'default', // size(large,default,small),可用于button、input、datePicker、select、avatar
     dsSize: 'default', //size(default,small),可用于ds,switch,card,
     dmsSize:'default',//size(default,middle,small)可用于table,
 };
 
 const getters = {
-    // 获取全局通用size
-    renderBaseSize(state) {
-        return state.baseSize;
+    // 获取ldsSize
+    renderLdsSize(state) {
+        return state.ldsSize;
     },
     //获取dsSize
     renderDsSize(state) {
@@ -20,9 +20,9 @@ const getters = {
 };
 
 const mutations = {
-    // 设置全局通用size
-    setBaseSize(state, data) {
-        state.baseSize = data;
+    // 设置ldsSize
+    setLdsSize(state, data) {
+        state.ldsSize = data;
     },
     // 设置dsSize
     setDsSize(state, data) {

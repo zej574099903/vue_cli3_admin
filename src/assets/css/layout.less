@@ -18,3 +18,36 @@
     background: @layout_header_bg !important;
   }
 }
+
+
+// 自适应字体大小
+/* 屏幕大于1600px时 */
+@media screen and (min-width: 1600px) {
+  .ict_font_size{
+    font-size: 26px;
+  }
+  .ict_color{
+    color:blue;
+  }
+}
+
+/* 屏幕大于1200px小与1599时 */
+@media screen and (min-width: 1200px) and (max-width:1599px) {
+  .ict_font_size{
+    font-size: 20px;
+  }
+  .ict_color{
+    color:green;
+  }
+}
+
+/* 屏幕小于1199px时 */
+@media screen and (max-width: 1199px) {
+  .ict_font_size{
+    font-size: 14px;
+  }
+  .ict_color{
+    color:red;
+  }
+}
+

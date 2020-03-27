@@ -17,46 +17,46 @@
       <div class="container">
         <h4>主题色</h4>
         <div class="ict-align--left theme_btns">
-          <a-button
+          <span
             type="primary"
             @click="changeTheme('#F5222D')"
             style="background:#F5222D"
-          ></a-button>
-          <a-button
+          ></span>
+          <span
             type="primary"
             @click="changeTheme('#FA541C')"
             style="background:#FA541C"
-          ></a-button>
-          <a-button
+          ></span>
+          <span
             type="primary"
             @click="changeTheme('#FAAD14')"
             style="background:#FAAD14"
-          ></a-button>
-          <a-button
+          ></span>
+          <span
             type="primary"
             @click="changeTheme('#13C2C2')"
             style="background:#13C2C2"
-          ></a-button>
-          <a-button
+          ></span>
+          <span
             type="primary"
             @click="changeTheme('#52C41A')"
             style="background:#52C41A"
-          ></a-button>
-          <a-button
+          ></span>
+          <span
             type="primary"
             @click="changeTheme('#1890FF')"
             style="background:#1890FF"
-          ></a-button>
-          <a-button
+          ></span>
+          <span
             type="primary"
             @click="changeTheme('#2F54EB')"
             style="background:#2F54EB"
-          ></a-button>
-          <a-button
+          ></span>
+          <span
             type="primary"
             @click="changeTheme('#722ED1')"
             style="background:#722ED1"
-          ></a-button>
+          ></span>
         </div>
         <h4>输入色号进行更换</h4>
         <div class="ict-align--left input_box">
@@ -115,7 +115,7 @@ export default {
   methods: {
     //展现抽屉盒
     showDrawer() {
-      this.visible=!this.visible
+      this.visible = !this.visible;
     },
     // 隐藏抽屉盒
     onClose() {
@@ -158,11 +158,13 @@ export default {
     margin-top: 10px;
     overflow-x: hidden;
     justify-content: space-between;
-    .ant-btn {
+    span {
       padding: 0;
       width: 20px;
       height: 20px;
       border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
   .input_box {
