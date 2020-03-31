@@ -16,9 +16,24 @@
           <a-menu-item key="home"
             ><a-icon type="home" /><span>首页</span></a-menu-item
           >
-          <a-menu-item key="selfAdaption"
-            ><a-icon type="arrows-alt" /><span>自适应</span></a-menu-item
-          >
+          <a-sub-menu>
+            <span slot="title">
+              <a-icon type="cluster" />
+              <span>公共组件</span>
+            </span>
+            <template>
+              <a-menu-item key="selfAdaption"><span>自适应</span></a-menu-item>
+            </template>
+          </a-sub-menu>
+          <a-sub-menu>
+            <span slot="title">
+              <a-icon type="table" />
+              <span>列表页</span>
+            </span>
+            <template>
+              <a-menu-item key="queryTable"><span>查询表格</span></a-menu-item>
+            </template>
+          </a-sub-menu>
         </a-menu>
       </a-layout-sider>
       <a-layout>
@@ -55,9 +70,24 @@
           <a-menu-item key="home"
             ><a-icon type="home" /><span>首页</span></a-menu-item
           >
-          <a-menu-item key="selfAdaption"
-            ><a-icon type="arrows-alt" /><span>自适应</span></a-menu-item
-          >
+          <a-sub-menu>
+            <span slot="title">
+              <a-icon type="cluster" />
+              <span>公共组件</span>
+            </span>
+            <template>
+              <a-menu-item key="selfAdaption"><span>自适应</span></a-menu-item>
+            </template>
+          </a-sub-menu>
+          <a-sub-menu>
+            <span slot="title">
+              <a-icon type="table" />
+              <span>列表页</span>
+            </span>
+            <template>
+              <a-menu-item key="queryTable"><span>查询表格</span></a-menu-item>
+            </template>
+          </a-sub-menu>
         </a-menu>
         <div class="right">
           <right-drop-down></right-drop-down>

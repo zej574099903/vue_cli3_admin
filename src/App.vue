@@ -28,11 +28,12 @@ export default {
         this.timer = true;
         setTimeout(() => {
           // 打印screenWidth变化的值
-          if (this.screenWidth > 1600) {
-            this.$store.commit("size/setLdsSize", "large");
-            this.$store.commit("size/setDsSize", "default");
-            this.$store.commit("size/setDmsSize", "default");
-          } else if (this.screenWidth < 1599 && this.screenWidth > 1200) {
+          // if (this.screenWidth > 1600) {
+          //   this.$store.commit("size/setLdsSize", "large");
+          //   this.$store.commit("size/setDsSize", "default");
+          //   this.$store.commit("size/setDmsSize", "default");
+          // } else 
+          if (this.screenWidth > 1200) {
             this.$store.commit("size/setLdsSize", "default");
             this.$store.commit("size/setDsSize", "default");
             this.$store.commit("size/setDmsSize", "middle");

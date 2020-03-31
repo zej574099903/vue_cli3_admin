@@ -16,8 +16,10 @@ import './assets/css/common.css';
 import './assets/css/global.less';
 // 引入base.css（页面样式，或多处使用的局部样式）
 import './assets/css/base.less';
-// 引入layout.css
+// 引入layout.css(修改ui组件的默认样式)
 import './assets/css/layout.less';
+// 引入媒体查询的样式
+import './assets/css/media.less';
 
 Vue.config.productionTip = false
 

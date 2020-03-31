@@ -1,0 +1,30 @@
+// 自适应字体大小
+/* 屏幕大于1600px时 */
+// @media screen and (min-width: 1600px) {
+//     .ict_font_size,.ant-form-item{
+//       font-size: 16px !important;
+//     }
+//     .ict_color{
+//       color:blue !important;
+//     }
+//   }
+
+/* 屏幕大于1200px小与1599时 */
+@media screen and (min-width: 1200px) {
+    .ict_font_size, .ant-form-item {
+        font-size: 14px !important;
+    }
+    .ict_color {
+        color: green !important;
+    }
+}
+
+/* 屏幕小于1199px时 */
+@media screen and (max-width: 1199px) {
+    .ict_font_size, .ant-form-item {
+        font-size: 12px !important;
+    }
+    .ict_color {
+        color: red !important;
+    }
+}

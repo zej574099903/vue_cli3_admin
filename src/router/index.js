@@ -20,7 +20,10 @@ const Login = () => import("@/views/Login");
 // 系统主页
 const Main = () => import("@/views/main/Main");
 const Home = () => import("@/views/main/home/Home");
-const SelfAdaption = () => import("@/views/main/selfAdaption/SelfAdaption")
+// 公共组件
+const Common = require('./lib/common');
+// 列表页
+const List = require('./lib/list')
 
 Vue.use(VueRouter);
 
@@ -37,11 +40,7 @@ const routes = [{
             path: "home",
             name: "home",
             component: Home
-        }, {
-            path: "selfAdaption",
-            name: "selfAdaption",
-            component: SelfAdaption
-        }]
+        }, ...Common, ...List]
     },
     {
         path: "/login",
