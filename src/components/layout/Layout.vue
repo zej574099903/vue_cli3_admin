@@ -125,10 +125,11 @@ export default {
   },
   computed: {
     // 默认的菜单选择框
-    defaultSelected() {
+    defaultSelected: function() {
       if (this.$route.name != null) {
         return [this.$route.name];
       }
+      return true;
     },
     ...mapState({
       //这里的...是超引用，ES6的语法，意思是state里有多少属性值我可以在这里放多少属性值
@@ -146,7 +147,7 @@ export default {
       }
     },
     //选择菜单栏
-    selectItem({ item, key, keyPath }) {
+    selectItem({ key }) {
       if (this.$router.history.current.name !== key) {
         sessionStorage.whichTab = "1";
         this.$router.push({ name: key });
@@ -167,7 +168,7 @@ export default {
   },
   watch: {
     "$route.name": {
-      handler(newName, oldName) {
+      handler(newName) {
         switch (newName) {
           case "home":
             this.openKeys = ["首页"];

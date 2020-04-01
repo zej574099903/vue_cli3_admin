@@ -9,7 +9,7 @@ export default {
   props: {},
   components: {},
   data() {
-    return { data, columns };
+    return {};
   },
   created() {},
   mounted() {},
@@ -17,8 +17,7 @@ export default {
   update() {},
   beforeRouteUpdate() {},
   methods: {},
-  computed: {
-  },
+  computed: {},
   watch: {}
 };
 </script>
