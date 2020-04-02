@@ -33,11 +33,11 @@ export default {
           //   this.$store.commit("size/setDsSize", "default");
           //   this.$store.commit("size/setDmsSize", "default");
           // } else 
-          if (this.screenWidth > 1200) {
+          if (this.screenWidth > 1600) {
             this.$store.commit("size/setLdsSize", "default");
             this.$store.commit("size/setDsSize", "default");
             this.$store.commit("size/setDmsSize", "middle");
-          } else if (this.screenWidth < 1199) {
+          } else if (this.screenWidth < 1599) {
             this.$store.commit("size/setLdsSize", "small");
             this.$store.commit("size/setDsSize", "small");
             this.$store.commit("size/setDmsSize", "small");

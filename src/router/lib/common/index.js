@@ -6,10 +6,16 @@ const SelfAdaption = {
     path: 'selfAdaption',
     name: 'selfAdaption',
     component: () => import("@/views/common/selfAdaption/SelfAdaption.vue")
-  }
-  
-  
-  module.exports = [
-    SelfAdaption
-  ]
-  
+}
+
+const FailReason = {
+    path: 'failReason',
+    name: 'failReason',
+    component: () => import("@/views/common/failed/failReason.vue")
+}
+
+
+module.exports = [
+    SelfAdaption,
+    FailReason
+]

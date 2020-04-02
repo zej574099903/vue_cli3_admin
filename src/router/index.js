@@ -20,6 +20,8 @@ const Login = () => import("@/views/Login");
 // 系统主页
 const Main = () => import("@/views/main/Main");
 const Home = () => import("@/views/main/home/Home");
+//没有页面
+const NoHtml = () => import("@/views/common/failed/notFind");
 // 公共组件
 const Common = require('./lib/common');
 // 列表页
@@ -46,7 +48,11 @@ const routes = [{
         path: "/login",
         name: "login",
         component: Login
-    }
+    },
+    {
+        path: '*',
+        component: NoHtml
+    },
 ];
 
 const router = new VueRouter({
